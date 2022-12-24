@@ -1,15 +1,20 @@
 import mongoose from "mongoose";
 
 const EstateSchema = new mongoose.Schema({
+    seller: {
+        type: String,
+        required: true,
+    },
     type: {
         type: String,
+        enum: ["house", "apartment", "villa"],
         required: true,
     },
     price: {
         type: Number,
         required: true,
     },
-    room: {
+    rooms: {
         type: Number,
         required: true,
     },
@@ -30,9 +35,14 @@ const EstateSchema = new mongoose.Schema({
         required: true,
     },
     zip: {
-        type: Number,
+        type: String,
         required: true,
-    }
+    },
+    images: {
+        type: Array,
+        default: [],
+        required: true,
+    },
 },{timestamps: true});
 
 const EstateModel = mongoose.model("Estate",EstateSchema);
