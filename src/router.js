@@ -4,7 +4,7 @@ import IsUserRegistered from './middleware/IsUserRegistered.js';
 import UserExist from './middleware/UserExist.js';
 import Login from './routes/login.js';
 import ConfirmSignUp from './routes/confirmSignUp.js';
-import whoami from './routes/whoami.js';
+import whoami from './routes/whoAmI.js';
 import { validateToken } from './jwt/jwt.js';
 import { logout } from './routes/logout.js';
 import {saveEstateImg} from './middleware/saveEstateImg.js';
