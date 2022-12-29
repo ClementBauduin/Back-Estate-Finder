@@ -18,7 +18,7 @@ export default async function Login(req, res) {
                 return res.status(400).json({ message: "Invalid Password" });
             } else {
                 const token = createToken(user);
-                res.cookie("accessToken", token,{domain: "estate-finder-clement-bauduin.netlify.app"}, { httpOnly: true });
+                res.cookie("accessToken", token,{ httpOnly: true });
                 res.setHeader('Access-Control-Allow-Origin', 'https://estate-finder-clement-bauduin.netlify.app');
                 res.setHeader('Access-Control-Allow-Credentials', true);
                 res.status(200).json({ message: "Login successful" });
