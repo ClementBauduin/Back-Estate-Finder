@@ -8,7 +8,6 @@ export default async function UserExist(req, res, next) {
   if (!user) {
     res.status(200).send({ message: "Username or email is incorrect" });
   } else {
-    res.status(200);
     return next();
   }
 }
