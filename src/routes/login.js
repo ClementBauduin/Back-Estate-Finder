@@ -18,7 +18,7 @@ export default async function Login(req, res) {
                 return res.status(400).json({ message: "Invalid Password" });
             } else {
                 const token = createToken(user);
-                res.cookie("accessToken", token,{ httpOnly: true,sameSite: "None" });
+                res.cookie("accessToken", token,{ httpOnly: true,sameSite: "None", domain: ".onrender.com" });
                 res.setHeader('Access-Control-Allow-Origin', 'https://estate-finder-clement-bauduin.onrender.com');
                 res.setHeader('Access-Control-Allow-Credentials', true);
                 res.status(200).json({ message: "Login successful" });
