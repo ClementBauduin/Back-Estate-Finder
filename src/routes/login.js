@@ -19,7 +19,7 @@ export default async function Login(req, res) {
             } else {
                 const token = createToken(user);
                 res.cookie("accessToken", token,{ httpOnly: true });
-                res.setHeader('Access-Control-Allow-Origin', 'https://estate-finder-clement-bauduin.netlify.app');
+                res.setHeader('Access-Control-Allow-Origin', 'https://estate-finder-clement-bauduin.onrender.com/');
                 res.setHeader('Access-Control-Allow-Credentials', true);
                 res.status(200).json({ message: "Login successful" });
                 
