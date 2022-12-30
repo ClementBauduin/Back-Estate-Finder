@@ -12,6 +12,7 @@ export function validateToken (req, res, next) {
     
     if (!token) {
         return res.status(200).json({ user: false });
+        console.log(token)
     }
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
