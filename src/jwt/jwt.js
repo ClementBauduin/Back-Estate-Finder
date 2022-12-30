@@ -11,8 +11,8 @@ export function validateToken (req, res, next) {
     const token = req.cookies.accessToken;
     
     if (!token) {
-        return res.status(200).json({ user: false });
         console.log(token)
+        return res.status(200).json({ user: false });
     }
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
