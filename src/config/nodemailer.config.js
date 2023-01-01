@@ -21,6 +21,6 @@ export default function sendConfirmationCode(name,email,confirmationCode) {
         subject:"Please confirm your email",
         html: `<h1>Hello ${name}</h1>
         <p>Thank you for registering on our website. Please click the link below to confirm your email.</p>
-        <a href="${url}api/confirm/?${confirmationCode}">Confirm email</a>`
+        <a href="${url}api/confirm/${confirmationCode}">Confirm email</a>`
     })
 }
